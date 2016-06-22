@@ -4,7 +4,7 @@
 
 
 ready = ->
-  $(".media").on "click", ->
+  $(".click-media").on "click", ->
     document.location = $(this).data("target")
     return false
 
