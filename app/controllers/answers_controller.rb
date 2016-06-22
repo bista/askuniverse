@@ -1,7 +1,10 @@
 class AnswersController < ApplicationController
 
 	def create
-		Answer.create(answer_params)
+		question = Question.find(params[:answer][:question_id])
+		question.answers.create(answer_params)
+		session[:current_user_email] = answer_params[:email]
+		redirect_to question
 	end
 
 	private
